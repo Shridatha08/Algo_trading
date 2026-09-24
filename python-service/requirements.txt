@@ -1,0 +1,7 @@
+fastapi>=0.115,<1
+uvicorn[standard]>=0.30,<1
+python-dotenv>=1.0,<2
+pandas>=2.2,<3
+pyotp>=2.9,<3
+smartapi-python>=1.5,<2
+websocket-client>=1.8,<2

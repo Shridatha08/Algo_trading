@@ -1,0 +1,85 @@
+:root {
+  --ink: #182126;
+  --muted: #718087;
+  --line: #d7e0dc;
+  --paper: #f4f6f0;
+  --panel: #fcfdf9;
+  --accent: #df5d3f;
+  --teal: #147d77;
+  --yellow: #efbd54;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; color: var(--ink); background: radial-gradient(circle at 15% 0%, #fff4dc 0, transparent 34%), var(--paper); font-family: Georgia, 'Times New Roman', serif; }
+.shell { width: min(1100px, calc(100% - 40px)); margin: 0 auto; padding: 42px 0 28px; }
+.topbar, .instrument-bar, .panel-heading, .connection { display: flex; align-items: center; justify-content: space-between; }
+.topbar { margin-bottom: 30px; }
+.kicker, .eyebrow, .label, th, footer { font: 11px/1.2 'Trebuchet MS', sans-serif; letter-spacing: 1.5px; }
+.kicker, .eyebrow { color: var(--accent); margin: 0 0 8px; font-weight: bold; }
+h1 { font-size: clamp(34px, 5vw, 62px); line-height: .95; margin: 0; font-weight: normal; letter-spacing: 0; }
+.connection { gap: 8px; color: var(--muted); font: 12px 'Trebuchet MS', sans-serif; }
+#statusDot, .pulse { display: inline-block; width: 9px; height: 9px; border-radius: 50%; background: var(--yellow); }
+#statusDot.live { background: var(--teal); box-shadow: 0 0 0 5px #147d7720; }
+.instrument-bar { gap: 20px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 16px 0; }
+.instrument-bar > div { display: grid; gap: 5px; }
+.label, .muted, table { color: var(--muted); }
+.panel { background: color-mix(in srgb, var(--panel) 91%, transparent); border: 1px solid var(--line); padding: 24px; box-shadow: 0 12px 30px #23332d0c; }
+.state { font: bold 11px 'Trebuchet MS', sans-serif; letter-spacing: 1px; }
+h2 { max-width: 600px; font-size: clamp(22px, 3vw, 32px); font-weight: normal; margin: 24px 0 28px; }
+.instrument-bar strong { font-size: 21px; font-weight: normal; }
+.setups { display: grid; gap: 18px; margin: 18px 0; }
+.setup h2 { margin: 18px 0 4px; }
+.setup h3 { font: bold 11px 'Trebuchet MS', sans-serif; letter-spacing: 1.5px; color: var(--accent); margin: 24px 0 10px; }
+.structure { font: 13px 'Trebuchet MS', sans-serif; margin: 0; }
+.state.bullish { color: var(--teal); }
+.state.bearish { color: var(--accent); }
+.state.neutral, .state.flat { color: var(--muted); }
+.blocked { border-left: 3px solid var(--yellow); }
+.reasons, .plan { margin: 0; padding-left: 18px; font: 14px/1.7 'Trebuchet MS', sans-serif; color: #364149; }
+.context { display: grid; grid-template-columns: repeat(auto-fit, minmax(104px, 1fr)); gap: 10px; margin-top: 18px; border-top: 1px solid var(--line); padding-top: 16px; }
+.context div { display: grid; gap: 6px; }
+.context span { color: var(--muted); font: 11px 'Trebuchet MS', sans-serif; letter-spacing: .6px; }
+.context b { font-weight: normal; font-size: 16px; }
+table.legs { margin-top: 4px; }
+table.legs td, table.legs th { padding: 10px; }
+.tag { font: bold 10px 'Trebuchet MS', sans-serif; letter-spacing: 1px; padding: 3px 7px; border: 1px solid var(--line); }
+tr.buy .tag { color: var(--teal); border-color: #147d7755; }
+tr.sell .tag { color: var(--accent); border-color: #df5d3f55; }
+.levels { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin: 22px 0 8px; }
+.levels div { border-left: 2px solid var(--line); padding-left: 12px; display: grid; gap: 6px; }
+.levels .stop { border-left-color: var(--accent); }
+.levels .target { border-left-color: var(--teal); }
+.levels span { color: var(--muted); font: 11px 'Trebuchet MS', sans-serif; }
+.levels b { font-size: 19px; font-weight: normal; }
+.levels i { font: 12px 'Trebuchet MS', sans-serif; color: var(--teal); font-style: normal; }
+.risk { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 12px; margin-top: 20px; border-top: 1px solid var(--line); padding-top: 16px; }
+.risk div { display: grid; gap: 6px; }
+.risk span { color: var(--muted); font: 11px 'Trebuchet MS', sans-serif; }
+.risk b { font-size: 18px; font-weight: normal; }
+.danger { color: var(--accent); }
+.good { color: var(--teal); }
+.topbar-right { display: flex; align-items: center; gap: 18px; }
+.pnl-link { display: inline-flex; align-items: baseline; gap: 7px; text-decoration: none; color: var(--ink); border: 1px solid var(--line); background: var(--panel); padding: 8px 13px; font: 11px 'Trebuchet MS', sans-serif; letter-spacing: 1.2px; }
+.pnl-link:hover { border-color: var(--accent); }
+.pnl-link span { font-size: 15px; letter-spacing: 0; }
+.book-btn { font: 11px 'Trebuchet MS', sans-serif; letter-spacing: .6px; padding: 6px 10px; border: 1px solid var(--accent); background: var(--panel); color: var(--accent); cursor: pointer; }
+.book-btn:hover:not(:disabled) { background: var(--accent); color: #fff; }
+.book-btn:disabled { opacity: .5; cursor: default; }
+.grade { font: 13px 'Trebuchet MS', sans-serif; margin: 10px 0 0; }
+.grade b { font-size: 20px; color: var(--teal); }
+table.strategies td:last-child { text-transform: none; font-size: 13px; }
+table.strategies tr td:first-child { color: var(--ink); }
+.index-charts { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 20px; }
+.index-chart { margin: 0; }
+.index-chart figcaption { font: 11px 'Trebuchet MS', sans-serif; letter-spacing: 1.5px; color: var(--accent); margin-bottom: 8px; }
+.index-chart figcaption b { color: var(--ink); font-weight: normal; font-size: 15px; letter-spacing: 0; }
+.chart { width: 100%; height: auto; display: block; background: #fffdf7; border: 1px solid var(--line); margin-bottom: 6px; }
+#statusDot.demo { background: var(--yellow); }
+#statusDot.stale { background: var(--accent); box-shadow: 0 0 0 5px #df5d3f20; }
+.candles-panel { overflow: hidden; }
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font: 14px 'Trebuchet MS', sans-serif; }
+th { text-align: left; font-weight: normal; padding: 14px 10px; border-bottom: 1px solid var(--line); }
+td { padding: 14px 10px; border-bottom: 1px solid #e6ece8; color: var(--ink); }
+footer { color: var(--muted); margin-top: 22px; }
+@media (max-width: 700px) { .shell { width: min(100% - 28px, 1100px); padding-top: 26px; } .instrument-bar { align-items: start; flex-wrap: wrap; } .instrument-bar > div { min-width: 42%; } .panel { padding: 18px; } }

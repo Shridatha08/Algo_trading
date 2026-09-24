@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paper P&amp;L &middot; Signal Workbench</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <div>
+        <p class="kicker">PAPER TRADING &middot; SIMULATED</p>
+        <h1>Positions &amp; P&amp;L</h1>
+      </div>
+      <div class="connection"><span id="statusDot"></span><span id="statusText">Connecting</span></div>
+    </header>
+
+    <section class="instrument-bar">
+      <div><span class="label">Open P&amp;L</span><strong id="openPnl">--</strong></div>
+      <div><span class="label">Booked P&amp;L</span><strong id="bookedPnl">--</strong></div>
+      <div><span class="label">Total P&amp;L</span><strong id="totalPnl">--</strong></div>
+      <div><span class="label">Open / Closed</span><strong id="counts">--</strong></div>
+      <div><span class="label">Hit rate</span><strong id="hitRate">--</strong></div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-heading"><span class="eyebrow">BY STRATEGY</span><span class="muted">Closed trades only</span></div>
+      <div class="table-wrap"><table><thead><tr><th>Strategy</th><th>Trades</th><th>Wins</th><th>Losses</th><th>Hit rate</th><th>P&amp;L</th></tr></thead><tbody id="strategyRows"><tr><td colspan="6" class="muted">No closed trades yet</td></tr></tbody></table></div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-heading"><span class="eyebrow">BY CONFLUENCE GRADE</span><span class="muted">Closed trades only</span></div>
+      <div class="table-wrap"><table><thead><tr><th>Grade</th><th>Trades</th><th>Wins</th><th>Losses</th><th>Hit rate</th><th>P&amp;L</th></tr></thead><tbody id="gradeRows"><tr><td colspan="6" class="muted">No closed trades yet</td></tr></tbody></table></div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-heading"><span class="eyebrow">BY EXPIRY</span><span class="muted">Front week vs next week</span></div>
+      <div class="table-wrap"><table><thead><tr><th>Expiry</th><th>Trades</th><th>Wins</th><th>Losses</th><th>Hit rate</th><th>P&amp;L</th></tr></thead><tbody id="expiryRows"><tr><td colspan="6" class="muted">No closed trades yet</td></tr></tbody></table></div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-heading"><span class="eyebrow">OPEN POSITIONS</span><span class="muted">1 lot per setup</span></div>
+      <div class="table-wrap"><table><thead><tr>
+        <th>Contract</th><th>Strategy</th><th>Legs</th><th>Qty</th>
+        <th>Entry</th><th>LTP</th><th>Stop</th><th>Targets</th><th>P&amp;L</th><th>Action</th>
+      </tr></thead><tbody id="openRows"><tr><td colspan="10" class="muted">No open paper positions</td></tr></tbody></table></div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-heading"><span class="eyebrow">CLOSED POSITIONS</span><span class="muted">Most recent first</span></div>
+      <div class="table-wrap"><table><thead><tr>
+        <th>Contract</th><th>Strategy</th><th>Entry</th><th>Exit</th><th>Reason</th><th>P&amp;L</th>
+      </tr></thead><tbody id="closedRows"><tr><td colspan="6" class="muted">Nothing closed yet</td></tr></tbody></table></div>
+    </section>
+
+    <footer>Simulated fills only. No order is sent to AngelOne at any point.</footer>
+  </main>
+  <script src="/positions.js"></script>
+</body>
+</html>

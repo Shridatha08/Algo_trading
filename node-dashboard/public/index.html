@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signal Workbench</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <div>
+        <p class="kicker">NSE F&amp;O SIGNAL DESK</p>
+        <h1>Options setup cockpit</h1>
+      </div>
+      <div class="topbar-right">
+        <a class="pnl-link" id="pnlLink" href="/positions.html" target="_blank" rel="noopener">P&amp;L <span id="pnlValue">--</span></a>
+        <div class="connection"><span id="statusDot"></span><span id="statusText">Connecting</span></div>
+      </div>
+    </header>
+
+    <section class="instrument-bar">
+      <div><span class="label">India VIX</span><strong id="vix">--</strong></div>
+      <div><span class="label">Tracked instruments</span><strong id="tracked">--</strong></div>
+      <div><span class="label">Updated</span><strong id="updated">--</strong></div>
+    </section>
+
+    <section class="panel candles-panel">
+      <div class="panel-heading"><span class="eyebrow">INDEX CANDLES</span><span class="muted">Current session</span></div>
+      <div class="index-charts" id="indexCharts"><p class="muted">Waiting for index candles</p></div>
+    </section>
+
+    <section id="setups" class="setups">
+      <article class="panel"><p class="muted">Waiting for market data</p></article>
+    </section>
+
+    <footer>Analytics only. No orders are placed. Validate every setup before risking capital.</footer>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>
