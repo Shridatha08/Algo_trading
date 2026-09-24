@@ -5,3 +5,5 @@ pandas>=2.2,<3
 pyotp>=2.9,<3
 smartapi-python>=1.5,<2
 websocket-client>=1.8,<2
+logzero
+
